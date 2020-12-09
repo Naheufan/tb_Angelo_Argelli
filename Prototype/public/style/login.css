@@ -1,0 +1,39 @@
+/*
+  Auteur  : Angelo Argelli
+  Fichier : login.css
+  Projet  : Travail de bachelor - Analyse et gestion des sujets de travail de bachelor
+
+  style de la page de connexion, login.php
+*/
+body{
+
+    background: #eee;
+}
+#loginContainer{
+  width: 200px;
+  margin:50px auto auto auto;
+  text-align: center;
+  padding: 20px;
+}
+.formElement{
+  height: 50px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.formElement label{
+
+}
+.formElement input{
+  margin-top: 5px;
+  border: solid 1px #98A3A6;
+  height:25px;
+  width: 80%;
+}
+#formSubmit{
+  width:80%;
+  border: none;
+  background:#0198f1;
+  color: white;
+  padding: 5px;
+    font-family: Verdana;
+}

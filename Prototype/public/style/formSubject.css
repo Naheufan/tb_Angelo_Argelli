@@ -1,0 +1,55 @@
+/*
+  Auteur  : Angelo Argelli
+  Fichier : formSubjects.css
+  Projet  : Travail de bachelor - Analyse et gestion des sujets de travail de bachelor
+
+  Style des éléments du formulaire d'ajout ou de modification d'un sujet
+*/
+#formPageBody{
+  padding:10px;
+}
+#addSubFormDisclaimer{
+  font-size: 10pt;
+  margin-bottom: 30px;
+}
+#formContainer{
+  margin-top: 10px;
+    font-size: 11pt;
+}
+table, tr{
+  width: 100%;
+}
+td{
+  height:40px;
+  vertical-align: top;
+}
+td:first-child {
+  text-align: right;
+  width:25%;
+}
+select{
+  min-width: 100%;
+    font-family: Verdana;
+}
+textarea{
+  resize: vertical;
+  width: 100%;
+  min-height: 100px;
+    font-family: Verdana;
+}
+input{
+  width: 100%;
+  height:20px;
+    font-family: Verdana;
+}
+#submit{
+  background-color: #0198f1;
+  border:none;
+  height: 30px;
+  color:white;
+    font-family: Verdana;
+}
+#submit:hover{
+  background-color: #0085d4;
+  border:none;
+}

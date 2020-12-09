@@ -1,0 +1,19 @@
+/*
+  Auteur  : Angelo Argelli
+  Fichier : documents.css
+  Projet  : Travail de bachelor - Analyse et gestion des sujets de travail de bachelor
+
+  Style des éléments de la page documents.php
+*/
+h1{
+  margin-top: 20px;
+  font-size: 14pt;
+}
+li{
+  margin-top: 5px;
+}
+#documentsBody{
+  width: 30%;
+  margin:auto;
+  padding-bottom:15px;
+}

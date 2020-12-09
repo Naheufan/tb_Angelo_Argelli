@@ -1,0 +1,22 @@
+/*
+  Auteur  : Angelo Argelli
+  Fichier : mySubjects.css
+  Projet  : Travail de bachelor - Analyse et gestion des sujets de travail de bachelor
+
+  style de la page mySubjects.php
+*/
+.itemButtons{
+  float:left;
+  width: 70%;
+  font-size: .8em;
+  text-align: right;
+}
+button{
+  margin: 0 1.5px 0 1.5px;
+  border: none;
+  height: 20px;
+  background: #0198f1;
+  color: white;
+  border-radius: 5px;
+  font-family: Verdana;
+}

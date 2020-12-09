@@ -1,0 +1,73 @@
+/*
+  Auteur  : Angelo Argelli
+  Fichier : style.css
+  Projet  : Travail de bachelor - Analyse et gestion des sujets de travail de bachelor
+
+  style des éléments récurrents sur toutes les pages
+*/
+body{
+  font-family: Verdana;
+  width: 80%;
+  margin-left: 10%;
+}
+#navbar {
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  border-bottom: 1px solid #5f9bcc;
+}
+.navbarCell{
+  color: white;
+  float: left;
+  background: #A4A4A4;
+  height: calc(100% - 16px);
+  width: auto;
+  line-height: calc(100% + 16px);
+  border-bottom: 3px solid #717171;
+  margin-right: 1px;
+  padding: 8px;
+}
+.navbarCell:hover{
+  background: #979797;
+}
+.navbarCell.selectedCell{
+  background: #1f99cd;
+  border-bottom: 3px solid #26426a
+}
+.navbarCell .tooltip{
+  visibility: hidden;
+  width: auto;
+  background-color: black;
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  top: 70px;
+}
+.navbarCell:hover .tooltip{
+  visibility: visible;
+}
+.rightCells{
+  float: right;
+  margin: 0 0 0 1px;
+}
+#container{
+  float:left;
+  border: 1px solid #264269;
+  margin: 5px 0 50px 0;
+  width: calc(100% - 2px);
+  min-height:
+}
+#containerTitle{
+  width: calc(100% -12px);
+  height: 24px;
+  background: #0198f1;
+  color: white;
+  font-size: .9em;
+  line-height: 24px;
+  padding-left: 12px;
+}
+.error{
+  color:red;
+}

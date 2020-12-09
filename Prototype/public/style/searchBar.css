@@ -1,0 +1,70 @@
+/*
+  Auteur  : Angelo Argelli
+  Fichier : searchBar.css
+  Projet  : Travail de bachelor - Analyse et gestion des sujets de travail de bachelor
+
+  style des éléments de la barre de recherche
+*/
+.itemButtons{
+  float:left;
+  width: 70%;
+  font-size: .8em;
+  text-align: right;
+}
+button{
+  margin: 0 1.5px 0 1.5px;
+  border: none;
+  height: 20px;
+  background: #0198f1;
+  color: white;
+  border-radius: 5px;
+  font-family: Verdana;
+}
+button:disabled{
+  background: #8c8c8c;
+  color: #706f6e;
+}
+#searchBar{
+  float:left;
+  width:100%;
+  border-top: 1px solid #264269;
+  margin-bottom: 15px;
+  height: auto;
+  background: #0198f1;
+}
+#searchBar select, input{
+  width: 300px;
+}
+option:disabled{
+	display: none;
+    font-family: Verdana;
+}
+#searchBar table{
+  width: 100%;
+}
+#searchBar tr{
+  color:white;
+  width: 100%;
+}
+#searchBar td{
+  width: 25%;
+  text-align: right;
+}
+#searchBar .searchTd {
+ text-align: center;
+}
+#searchBar td input, select{
+  float: left;
+}
+#searchbar td[colspan]:not([colspan="1"]) {
+ text-align: center;
+}
+#searchBar label{
+  text-align: right;
+}
+#searchBar button{
+  margin:auto;
+  width: 300px;
+  background: white;
+  color: black;
+}
