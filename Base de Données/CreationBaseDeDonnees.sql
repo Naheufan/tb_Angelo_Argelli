@@ -23,9 +23,65 @@ CREATE TABLE `suj_filiere` (
 --
 
 LOCK TABLES `suj_filiere` WRITE;
-INSERT INTO `suj_filiere` VALUES (0,'Divers','Div'),(1,'Informatique de Gestion','IG'),(2,'Information Documentaire','ID'),(3,'Economie d\'Entreprise','EE'),(4,'International Business Management','IBM');
+INSERT INTO `suj_filiere` VALUES 
+(1,'Informatique de Gestion','IG'),
+(2,'Information Documentaire','ID'),
+(3,'Economie d\'Entreprise','EE'),
+(4,'International Business Management','IBM'),
+(5,'Divers','Div');
 UNLOCK TABLES;
+UPDATE `tb_sujets_db`.`suj_filiere` SET `filiere_id` = '0' WHERE (`filiere_id` = '5');
 
+
+--
+-- Sutructure de la table `suj_user`
+--
+
+DROP TABLE IF EXISTS `suj_user`;
+CREATE TABLE `suj_user` (
+  `user_id` int NOT NULL AUTO_INCREMENT,
+  `user_login` varchar(45) NOT NULL,
+  `user_pwd` varchar(45) NOT NULL,
+  `user_type` enum('user','admin') NOT NULL DEFAULT 'user',
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_login_UNIQUE` (`user_login`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- données de `suj_user`
+--
+
+LOCK TABLES `suj_user` WRITE;
+INSERT INTO `suj_user` VALUES
+/*administrateur (mdp = pwd (md5))*/
+(1,'administrateur','9003d1df22eb4d3820015070385194c8','admin'),
+/*professeurs (mdp = profPassword (md5))*/
+(2,'LudovicBOULET','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+(3,'DimitriGARNIER','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+(4,'LilianBAUDELAIRE','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+(5,'ArthurLEBEAU','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+(6,'AlbanDELCROIX','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+(7,'AntoineSHARPE','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+(8,'RoméoSEYRÈS','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+(9,'MathisABBADIE','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+(10,'MathieuCOUVREUR','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+(11,'GodefroyGUILBERT','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+(12,'GinetteGAGNON','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+(13,'GabrielleBOSSUET','7f144cd86b7ef12948dd77cf9c7f8488','user'),
+/*étudiants (mdp = etuPassword (md5))*/
+(14,'ÉmilienneGAUTHIER','f2a10b6f3a95584869534bdacb1c571f','user'),
+(15,'HéloïseCOCHET','f2a10b6f3a95584869534bdacb1c571f','user'),
+(16,'SabrinaCAZENAVE','f2a10b6f3a95584869534bdacb1c571f','user'),
+(17,'Marie-PierreGACHET','f2a10b6f3a95584869534bdacb1c571f','user'),
+(18,'RebeccaBESSETTE','f2a10b6f3a95584869534bdacb1c571f','user'),
+(19,'ClaudetteCORRIVEAU','f2a10b6f3a95584869534bdacb1c571f','user'),
+(20,'RomaineVEIL','f2a10b6f3a95584869534bdacb1c571f','user'),
+(21,'ClémentineAPPELL','f2a10b6f3a95584869534bdacb1c571f','user'),
+(22,'GuyGIDE','f2a10b6f3a95584869534bdacb1c571f','user'),
+(23,'AnatoleJÉGOU','f2a10b6f3a95584869534bdacb1c571f','user'),
+(24,'FrankLARUE','f2a10b6f3a95584869534bdacb1c571f','user'),
+(25,'ÉmileLECOCQ','f2a10b6f3a95584869534bdacb1c571f','user');
+UNLOCK TABLES;
 --
 -- Sutructure de la table `suj_personne`
 --
@@ -134,55 +190,6 @@ INSERT INTO `suj_sujet` VALUES
 (28,'rangement des archives','Ut aliquam lorem id lorem mollis commodo. Etiam scelerisque lorem ex, id mollis metus lobortis et. In dignissim ex a lorem facilisis scelerisque. Fusce cursus tincidunt justo, vitae tincidunt ipsum. Phasellus sit amet orci et arcu interdum commodo a sed risus. Cras eu urna tellus.','2020-12-06 18:37:57','hybride','pris',1,0);
 UNLOCK TABLES;
 
---
--- Sutructure de la table `suj_user`
---
-
-DROP TABLE IF EXISTS `suj_user`;
-CREATE TABLE `suj_user` (
-  `user_id` int NOT NULL AUTO_INCREMENT,
-  `user_login` varchar(45) NOT NULL,
-  `user_pwd` varchar(45) NOT NULL,
-  `user_type` enum('user','admin') NOT NULL DEFAULT 'user',
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_login_UNIQUE` (`user_login`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- données de `suj_user`
---
-
-LOCK TABLES `suj_user` WRITE;
-INSERT INTO `suj_user` VALUES
-/*administrateur (mdp = pwd (md5))*/
-(1,'administrateur','9003d1df22eb4d3820015070385194c8','admin'),
-/*professeurs (mdp = profPassword (md5))*/
-(2,'LudovicBOULET','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-(3,'DimitriGARNIER','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-(4,'LilianBAUDELAIRE','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-(5,'ArthurLEBEAU','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-(6,'AlbanDELCROIX','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-(7,'AntoineSHARPE','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-(8,'RoméoSEYRÈS','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-(9,'MathisABBADIE','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-(10,'MathieuCOUVREUR','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-(11,'GodefroyGUILBERT','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-(12,'GinetteGAGNON','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-(13,'GabrielleBOSSUET','7f144cd86b7ef12948dd77cf9c7f8488','user'),
-/*étudiants (mdp = etuPassword (md5))*/
-(14,'ÉmilienneGAUTHIER','f2a10b6f3a95584869534bdacb1c571f','user'),
-(15,'HéloïseCOCHET','f2a10b6f3a95584869534bdacb1c571f','user'),
-(16,'SabrinaCAZENAVE','f2a10b6f3a95584869534bdacb1c571f','user'),
-(17,'Marie-PierreGACHET','f2a10b6f3a95584869534bdacb1c571f','user'),
-(18,'RebeccaBESSETTE','f2a10b6f3a95584869534bdacb1c571f','user'),
-(19,'ClaudetteCORRIVEAU','f2a10b6f3a95584869534bdacb1c571f','user'),
-(20,'RomaineVEIL','f2a10b6f3a95584869534bdacb1c571f','user'),
-(21,'ClémentineAPPELL','f2a10b6f3a95584869534bdacb1c571f','user'),
-(22,'GuyGIDE','f2a10b6f3a95584869534bdacb1c571f','user'),
-(23,'AnatoleJÉGOU','f2a10b6f3a95584869534bdacb1c571f','user'),
-(24,'FrankLARUE','f2a10b6f3a95584869534bdacb1c571f','user'),
-(25,'ÉmileLECOCQ','f2a10b6f3a95584869534bdacb1c571f','user');
-UNLOCK TABLES;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`TBAdministrator`@`localhost`
 SQL SECURITY DEFINER
